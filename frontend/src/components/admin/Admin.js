@@ -7,7 +7,15 @@ import Navbar from "../admin/subcomponents/Navbar";
 const Admin = () => {
   let navigate = useNavigate();
 
-  
+  const handleLogout = () => {
+    auth.signOut().then(() => {
+      // Sign-out successful.
+      navigate('/');
+    }).catch((error) => {
+      // An error happened.
+      console.error("Logout Error:", error);
+    });
+  };
 
   return (
     <div>
