@@ -114,6 +114,62 @@ const Maps = () => {
         <button className="neo-button" onClick={goToMyLocation}><MyLocationIcon/></button>
         <button className="neo-button" onClick={refreshMap}><RefreshIcon /></button>
       </div>
+      <div>
+            <h2>Filters</h2>
+            <label>
+              <input
+                type="checkbox"
+                checked={handicapAvailable}
+                onChange={() => setHandicapAvailable(!handicapAvailable)}
+              />
+              Handicap Accessible
+            </label>
+            <br />
+            <label>
+              <input
+                type="checkbox"
+                checked={babyChangingStationAvailable}
+                onChange={() => setBabyChangingStationAvailable(!babyChangingStationAvailable)}
+              />
+              Baby Changing Station
+            </label>
+            <br />
+            <label>
+              Rating:
+              <select value={rating} onChange={handleRatingChange}>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </label>
+            <br />
+            <button onClick={handleFilterSubmit} >Submit</button>
+          </div>
+        </PopupBody>
+      </BasePopup>
+      </div>
+      {selectedRestroom && (
+        <div className="map-control" style={{ marginTop: '45px' }}>
+          <h3>{selectedRestroom.name}</h3>
+          <p>Rating : {selectedRestroom.rating} 🌟 / 5</p>
+          <p>Availablity : {selectedRestroom.available}</p>
+          <p>Baby Changing Station : {selectedRestroom.babyChangingStation}</p>
+          <p>Handicap Availablity : {selectedRestroom.handicap}</p>
+          <p>{selectedRestroom.descriptionMon}</p>
+          <p>{selectedRestroom.descriptionTue}</p>
+          <p>{selectedRestroom.descriptionWed}</p>
+          <p>{selectedRestroom.descriptionThu}</p>
+          <p>{selectedRestroom.descriptionFri}</p>
+          <p>{selectedRestroom.descriptionSat}</p>
+          <p>{selectedRestroom.descriptionSun}</p>
+
+        </div>
+      )}
+
+    </div>
+  
     </div>
   );
 };
