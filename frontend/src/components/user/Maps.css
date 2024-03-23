@@ -1,0 +1,35 @@
+.maps-container{
+    margin: 25px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    justify-content: center;
+    display: flex;
+    align-items: center; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 2px;
+  }
+  
+  .neo-button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: lightgray;
+    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .neo-button:hover {
+    box-shadow: -2px -2px 5px #ffffff, 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  
