@@ -12,12 +12,26 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 const Maps = () => {
+  const [handicapAvailable, setHandicapAvailable] = useState(false);
+  const [babyChangingStationAvailable, setBabyChangingStationAvailable] = useState(false);
+  const [rating, setRating] = useState('5');
   const mapContainerRef = useRef(null);
-  const mapRef = useRef(null); // Added reference to store the map instance
+  const mapRef = useRef(null); 
   const directionsRef = useRef(null); 
-  const markerRef = useRef(null);// Reference for directions instance
+  const markerRef = useRef(null);
 
-  // Your Mapbox access token
+  // Function to handle changes in rating
+  const handleRatingChange = useCallback((event) => {
+    setRating(event.target.value);
+  }, []);
+
+  // Function to handle filter submission
+  const handleFilterSubmit = useCallback(() => {
+    // Logic In progress.. 
+  }, [handicapAvailable, babyChangingStationAvailable, rating]);
+
+  
+  // Mapbox access token
   mapboxgl.accessToken = 'pk.eyJ1IjoibmFhdXNlcm5hbWUiLCJhIjoiY2x0ZHRzdzhnMDZ4azJrcGp0aTNveHNiOSJ9.KMIfvVh_a3LxYGs8c4vHyw';
 
   useEffect(() => {
