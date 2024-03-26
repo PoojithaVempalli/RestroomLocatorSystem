@@ -71,12 +71,14 @@ function NavBar() {
               </NavLink>
             </li>
             <li className="nav-item">
-                <NavLink
+              <NavLink
+                exact
+                to="/"  // routing to HOME
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleLogout}>
-                    Logout
-                </NavLink>
+                  Logout
+              </NavLink>
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
