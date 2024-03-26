@@ -77,8 +77,7 @@ const Maps = () => {
         .setLngLat(e.result.geometry.coordinates)
         .addTo(map);
     });
-
-    return () => map.remove();
+    
   }, []);
 
   const zoomIn = () => {
