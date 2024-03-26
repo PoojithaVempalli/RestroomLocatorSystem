@@ -21,10 +21,25 @@ const defaultTheme = createTheme();
 
 
 function Signup() {
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  
+  const [error, setError] = useState('');
+
+  const handleSignup = async () => {
+    try {
+      await auth.createUserWithEmailAndPassword(email, password);
+      alert("Registered Successfully");
+      navigate('/');
+    } catch (error) {
+      console.error(error);
+      setError("Failed to create account. " + error.message);
+    }
+  };
+    
   const handleSignup = async () => {
     try {
       await auth.createUserWithEmailAndPassword(email, password);
@@ -93,6 +108,7 @@ function Signup() {
           >
             Sign Up
           </Button>
+           {error && <Typography color="error">{error}</Typography>}
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="/" variant="body2">
