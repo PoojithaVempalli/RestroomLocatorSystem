@@ -78,7 +78,12 @@ const Maps = () => {
         .addTo(map);
     });
     
-  }, []);
+  // Cleanup function
+  return () => {
+     // This removes the map instance and all associated event listeners and controls
+    map.remove();
+  };
+}, []);
 
   const zoomIn = () => {
     mapRef.current.zoomIn();
