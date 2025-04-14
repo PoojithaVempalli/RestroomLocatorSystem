@@ -7,7 +7,7 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth, setPersistence, browserSessionPersistence } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAPk8AuSnnqVN43DCGp7WNF2lZjiit5VtM",
+  apiKey: process.env.GoogleFireBaseKey,
   authDomain: "public-restroom-locator-14.firebaseapp.com",
   projectId: "public-restroom-locator-14",
   storageBucket: "public-restroom-locator-14.appspot.com",
